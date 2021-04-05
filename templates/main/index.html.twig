@@ -1,0 +1,537 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+    <!-- Hero Start -->
+    <section class="bg-half-170 d-table w-100"
+             style="background-color:#0074bb;background-size: contain">
+        <div id="particles-js" class="bg-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 col-md-7">
+                    <div class="title-heading mt-4">
+                        <h1 class="heading mb-3" style="color: #ffffff">SPACIUM <br> <span>D-center for growth</span>
+                        </h1>
+                        <p class="para-desc text-muted" style="color:#c7c7c7 !important;">
+                            Revolutionizing technology that builds a better future for the humans and assisting their growth by providing unparalleled services.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#services" class="btn btn-primary mt-2 mr-2">
+                                <i style="font-size: 20px" class="mdi mdi-chevron-down"></i>
+                                Our Services
+                            </a>
+                            <!--                        <a href="documentation.html" class="btn btn-outline-primary mt-2"><i-->
+                            <!--                                class="mdi mdi-book-outline"></i> Documentation</a>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contact-form" class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                    <div class="card login_page shadow rounded border-0 ml-lg-5">
+                        <div class="card-body">
+                            <h5 class="card-title">You can start search here</h5>
+                            <div v-cloak v-if="success" class="alert alert-success" role="alert">${success}</div>
+                            <div v-cloak v-if="error" class="alert alert-danger" role="alert">${error}</div>
+                            <form class="login-form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Name</label>
+                                            <i data-feather="user" class="fea icon-sm icons"></i>
+                                            <input type="text" v-model="form_data.name" class="form-control pl-5" placeholder="Name"
+                                                   required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Email</label>
+                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                            <input type="email" v-model="form_data.email" class="form-control pl-5" placeholder="Email"
+                                                   required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Phone Number</label>
+                                            <i data-feather="phone" class="fea icon-sm icons"></i>
+                                            <input type="number" maxlength="10" minlength="10" v-model="form_data.phone" class="form-control pl-5" placeholder="Phone"
+                                                   required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Message</label>
+                                            <textarea v-model="form_data.message" class="form-control" placeholder="Message"
+                                                      required=""></textarea>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button :disabled="processing" class="btn btn-success w-100 g-recaptcha" data-sitekey="6LdvxIwaAAAAAGcXIYpVemgdGfbrNpK1ditofF8b"
+                                                data-callback='onSubmit'
+                                                data-action='submit'>${ processing ? 'Sending Message...':'Contact Now'}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div> <!--end container-->
+    </section><!--end section-->
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Welcome To The World of SPACIUM</h4>
+                        <p class="text-muted para-desc mb-0 mx-auto">In team SPACIUM our technical maestros are dedicatedly
+                            and continuously working to make our products the best in the industry.
+                        </p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <a href="#" class="card features fea-primary rounded p-4 bg-light text-center position-relative overflow-hidden border-0">
+                            <span class="h1 icon2 text-primary">
+                               <img height="40px" src="assets/images/spacium.png" alt="spacium"/>
+                            </span>
+                        <div class="card-body p-0 content">
+                            <h5>SPACIUM Partners</h5>
+                            <p class="para text-muted mb-0">Let’s grow without boundaries</p>
+                        </div>
+                        <span class="big-icon text-center">
+                               <img height="100px" src="assets/images/spacium.png" alt="spacium"/>
+                    </span>
+                    </a>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <a href="#" class="card features fea-primary rounded p-4 bg-light text-center position-relative overflow-hidden border-0">
+                            <span class="h1 icon2 text-primary">
+                               <img height="40px" src="assets/images/store.png" alt="store"/>
+                            </span>
+                        <div class="card-body p-0 content">
+                            <h5>SPACIUM Store</h5>
+                            <p class="para text-muted mb-0">Life is easy, keep it that way!</p>
+                        </div>
+                        <span class="big-icon text-center">
+                           <img height="100px" src="assets/images/store.png" alt="store"/>
+                    </span>
+                    </a>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <a href="#" class="card features fea-primary rounded p-4 bg-light text-center position-relative overflow-hidden border-0">
+                            <span class="h1 icon2 text-primary">
+                               <img height="40px" src="assets/images/cloud.png" alt="cloud"/>
+                            </span>
+                        <div class="card-body p-0 content">
+                            <h5>SPACIUM Cloud Storage Service</h5>
+                            <p class="para text-muted mb-0">Claim your space, claim your world</p>
+                        </div>
+                        <span class="big-icon text-center">
+                               <img height="100px" src="assets/images/cloud.png" alt="cloud"/>
+                    </span>
+                    </a>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <a href="#" class="card features fea-primary rounded p-4 bg-light text-center position-relative overflow-hidden border-0">
+                            <span class="h1 icon2 text-primary">
+                               <img height="40px" src="assets/images/chat.png" alt="chat"/>
+                            </span>
+                        <div class="card-body p-0 content">
+                            <h5>SPACIUM Web Hosting and Domain Service</h5>
+                            <p class="para text-muted mb-0">Expanding businesses to another dimension</p>
+                        </div>
+                        <span class="big-icon text-center">
+                               <img height="100px" src="assets/images/chat.png" alt="chat"/>
+                    </span>
+                    </a>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+
+        <!-- About Start -->
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                            <div class="card work-container work-modern overflow-hidden rounded border-0 shadow-md">
+                                <div class="card-body p-0">
+                                    <img src="assets/images/about4.jpg" class="img-fluid" alt="work-image">
+                                    <div class="overlay-work bg-dark"></div>
+                                    <!--                                <div class="content">-->
+                                    <!--                                    <a href="javascript:void(0)" class="title text-white d-block font-weight-bold">Web-->
+                                    <!--                                        Development</a>-->
+                                    <!--                                    <small class="text-light">IT & Software</small>-->
+                                    <!--                                </div>-->
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-lg-6 col-6">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                                    <div class="card work-container work-modern overflow-hidden rounded border-0 shadow-md">
+                                        <div class="card-body p-0">
+                                            <img src="assets/images/about2.jpg" class="img-fluid"
+                                                 alt="work-image">
+                                            <div class="overlay-work bg-dark"></div>
+                                            <!--                                        <div class="content">-->
+                                            <!--                                            <a href="javascript:void(0)"-->
+                                            <!--                                               class="title text-white d-block font-weight-bold">Michanical Engineer</a>-->
+                                            <!--                                            <small class="text-light">Engineering</small>-->
+                                            <!--                                        </div>-->
+                                        </div>
+                                    </div>
+                                </div><!--end col-->
+
+                                <div class="col-lg-12 col-md-12 mt-4 pt-2">
+                                    <div class="card work-container work-modern overflow-hidden rounded border-0 shadow-md">
+                                        <div class="card-body p-0">
+                                            <img src="assets/images/about3.jpg" class="img-fluid"
+                                                 alt="work-image">
+                                            <div class="overlay-work bg-dark"></div>
+                                            <!--                                        <div class="content">-->
+                                            <!--                                            <a href="javascript:void(0)"-->
+                                            <!--                                               class="title text-white d-block font-weight-bold">Chartered-->
+                                            <!--                                                Accountant</a>-->
+                                            <!--                                            <small class="text-light">C.A.</small>-->
+                                            <!--                                        </div>-->
+                                        </div>
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 mt-4 mt-lg-0 pt- pt-lg-0">
+                    <div class="ml-lg-4">
+                        <div class="section-title mb-4">
+                            <h4 class="title mb-2">Our Purpose</h4>
+                            <p class="text-muted para-desc mb-0 mx-auto">
+                                We are evolving every single day through our services and through our will to bring about a
+                                change in the life of every existing human.
+                            </p>
+                        </div>
+
+                        <!--                    <h4 class="title mb-4">We are thrilled to</h4>-->
+                        <ul class=" text-muted ml-1 pl-1">
+                            <li class="mb-0">
+                                Inculcate technology and transmit it for the better and brighter future of the businesses around the globe.
+                            </li>
+                            <li class="mb-0">
+                                Make the communities thrive by handing over the baton of growth.
+                            </li>
+                            <li class="mb-0">
+                                Provide an extra-edge to throw extra-light for sneaking into tomorrow and beyond.
+                            </li>
+                        </ul>
+                        <!--                    <p class="text-muted para-desc">-->
+                        <!--                        We relate with your ambitions, we share your opinions, we accept all the challenges because where there is we there is hope.-->
+                        <!--                    </p>-->
+                    </div>
+                </div>
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+
+    <!-- Testi Start -->
+    <section class="section pb-0 d-none">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Stories that we constantly look forward to</h4>
+                        <p class="text-muted para-desc mx-auto mb-0">
+                            We relate with your ambitions, we share your opinions, we accept all the challenges because
+                            where there is we there is hope.
+                        </p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-12 mt-4 pt-2">
+                    <div id="customer-testi" class="owl-carousel owl-theme">
+                        <div class="card customer-testi text-center border rounded mx-2">
+                            <div class="card-body">
+                                <img src="assets/images/client/amazon.svg" class="img-fluid avatar avatar-ex-sm mx-auto"
+                                     alt="">
+                                <p class="text-muted mt-4">" It seems that only fragments of the original text remain in the
+                                    Lorem Ipsum texts used today. "</p>
+                                <h6 class="text-primary">- Thomas Israel</h6>
+                            </div>
+                        </div>
+                        <div class="card customer-testi text-center border rounded mx-2">
+                            <div class="card-body">
+                                <img src="assets/images/client/google.svg" class="img-fluid avatar avatar-ex-sm mx-auto"
+                                     alt="">
+                                <p class="text-muted mt-4">" The most well-known dummy text is the 'Lorem Ipsum', which is
+                                    said to have originated in the 16th century. "</p>
+                                <h6 class="text-primary">- Carl Oliver</h6>
+                            </div>
+                        </div>
+                        <div class="card customer-testi text-center border rounded mx-2">
+                            <div class="card-body">
+                                <img src="assets/images/client/lenovo.svg" class="img-fluid avatar avatar-ex-sm mx-auto"
+                                     alt="">
+                                <p class="text-muted mt-4">" One disadvantage of Lorum Ipsum is that in Latin certain
+                                    letters appear more frequently than others. "</p>
+                                <h6 class="text-primary">- Barbara McIntosh</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- Testi End -->
+
+    <!-- Pricing Start -->
+    <section class="section pt-2">
+        <div class="container">
+            <div class="row mt-lg-4 align-items-center">
+                <div class="col-lg-5 col-md-12 text-center text-lg-left">
+                    <div class="section-title mb-4 mb-lg-0 pb-2 pb-lg-0">
+                        <h4 class="title mb-4">Pay less for more services</h4>
+                        <p class="text-muted para-desc mx-auto mb-0">
+                            Without any compromise with quality, SPACIUM Space Service enables you to explore more and grow more.
+                        </p>
+                        <a href="https://spacium.space/index.php?rp=/store/shared-hosting" target="_blank" class="btn btn-primary mt-4">Buy Now</a>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-7 col-md-12">
+                    <div class="row align-items-center ml-lg-5">
+                        <div class="col-md-6 col-12 mt-4 pt-4 px-md-0">
+                            <div class="card pricing-rates starter-plan text-center shadow rounded border-0">
+                                <div class="card-body py-5">
+                                    <h2 class="title text-uppercase text-primary mb-4">Starter</h2>
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <span class="h4 mb-0 mt-2">₹</span>
+                                        <span class="price h1 mb-0">45.00</span>
+                                        <span class="h4 align-self-end mb-1">/mo</span>
+                                    </div>
+
+                                    <ul class="list-unstyled mb-0 pl-0">
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>1 Website
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>10 GB Space
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>5 Email Accounts
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>2 TB Bandwidth
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Cpanel + Softclause
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>5 Subdomains
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>5 Mysql Database
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Free SSL certificates
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Rs. 499 Yearly
+                                        </li>
+                                    </ul>
+                                    <a href="https://spacium.space/cart.php?a=add&pid=4" class="btn btn-primary mt-4">Get Started</a>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-md-6 col-12 mt-4 pt-2 pt-md-4 px-md-0">
+                            <div class="card pricing-rates bg-light text-center shadow rounded border-0">
+                                <div class="card-body py-5">
+                                    <h2 class="title text-uppercase text-primary mb-4">Professional</h2>
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <span class="h4 mb-0 mt-2">₹</span>
+                                        <span class="price h1 mb-0">199.00</span>
+                                        <span class="h4 align-self-end mb-1">/mo</span>
+                                    </div>
+
+                                    <ul class="list-unstyled mb-0 pl-0">
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Unlimited Website
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Unlimited Space
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Unlimited Email Accounts
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Unlimited Bandwidth
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Cpanel + Softclause
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Unlimited Subdomains
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Unlimited Mysql Database
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Free SSL certificates
+                                        </li>
+                                        <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i
+                                                        class="uim uim-check-circle"></i></span>Rs. 1999 Yearly
+                                        </li>
+                                    </ul>
+                                    <a href="https://spacium.space/cart.php?a=add&pid=7" class="btn btn-primary mt-4">Try it now</a>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-light">
+            <svg viewBox="0 0 2880 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M720 125L2160 0H2880V250H0V125H720Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- Pricing End -->
+    <!-- News Start -->
+    <section v-cloak id="blogs" class="section pt-5 pt-sm-0 pt-md-4 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Latest news / Blogs</h4>
+                        <p class="text-muted para-desc mx-auto mb-0">
+                            This the space for our thoughtful perspectives. Our continuous endeavour is to keep up with the latest trends and current happenings of the world and beyond.
+                        </p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div v-if="blogs.length > 0" v-for="(blog) in blogs" class="col-lg-4 col-md-6 mt-4 pt-2">
+                    <div class="card blog rounded border-0 shadow">
+                        <div class="position-relative">
+                            <img :src="blog._embedded['wp:featuredmedia'][0].source_url" class="card-img-top rounded-top" alt="...">
+                            <div class="overlay rounded-top bg-dark"></div>
+                        </div>
+                        <div class="card-body content">
+                            <h5><a href="javascript:void(0)" class="card-title title text-dark">${blog.title.rendered}</a></h5>
+                            <div class="post-meta d-flex justify-content-between mt-3">
+                                <!--<ul class="list-unstyled mb-0">
+                                    <li class="list-inline-item mr-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i class="mdi mdi-heart-outline mr-1"></i>33</a></li>
+                                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i class="mdi mdi-comment-outline mr-1"></i>08</a></li>
+                                </ul>-->
+                                <a :href="blog.link" target="_blank" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="author">
+                            <small class="text-light user d-block"><i class="mdi mdi-account"></i> Spacium</small>
+                            <small class="text-light date"><i class="mdi mdi-calendar-check"></i> ${blog.date}</small>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- Blog End -->
+    <!-- FAQ n Contact Start -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="media">
+                        <i data-feather="help-circle" class="fea icon-ex-md text-primary mr-2 mt-1"></i>
+                        <div class="media-body">
+                            <h5 class="mt-0">How does SPACIUM Partners Service work?</h5>
+                            <p class="answer text-muted mb-0">Due to its widespread use as filler text for layouts,
+                                non-readability is of great importance: human perception is tuned to recognize certain
+                                patterns and repetitions in texts.</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="media">
+                        <i data-feather="help-circle" class="fea icon-ex-md text-primary mr-2 mt-1"></i>
+                        <div class="media-body">
+                            <h5 class="mt-0"> What are the advantages of SPACIUM Cloud Service?</h5>
+                            <p class="answer text-muted mb-0">If the distribution of letters and 'words' is random, the
+                                reader will not be distracted from making a neutral judgement on the visual impact</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-md-6 col-12 mt-4 pt-2">
+                    <div class="media">
+                        <i data-feather="help-circle" class="fea icon-ex-md text-primary mr-2 mt-1"></i>
+                        <div class="media-body">
+                            <h5 class="mt-0">How can I place my grocery order through SPACIUM Store?</h5>
+                            <p class="answer text-muted mb-0">Furthermore, it is advantageous when the dummy text is
+                                relatively realistic so that the layout impression of the final publication is not
+                                compromised.</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-md-6 col-12 mt-4 pt-2">
+                    <div class="media">
+                        <i data-feather="help-circle" class="fea icon-ex-md text-primary mr-2 mt-1"></i>
+                        <div class="media-body">
+                            <h5 class="mt-0"> How is SPACIUM Web-Hosting and Domain services different from other web service providers?
+                            </h5>
+                            <p class="answer text-muted mb-0">The most well-known dummy text is the 'Lorem Ipsum', which is
+                                said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin
+                                language which more or less corresponds to 'proper' Latin.</p>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row my-md-5 my-4 pb-lg-5 mt-sm-0 pt-sm-0 justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title">
+                        <a href="page-contact-two.html" class="btn btn-primary mt-4">
+                            More FAQ
+                            <i class="mdi mdi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-footer">
+            <svg viewBox="0 0 2880 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M720 125L2160 0H2880V250H0V125H720Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- FAQ n Contact End -->
+{% endblock %}
+
+
+{% block footer_javascript %}
+    <script src="assets/js/Controllers/MainController.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+{% endblock %}
