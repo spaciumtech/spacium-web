@@ -10,30 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe4ce46-45f3-4919-807f-38fbaab75cd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Common.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/blogs.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/pagination.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/single-blog.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/spacium_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spacium_web.iml" afterDir="false" />
+    <list default="true" id="2fe4ce46-45f3-4919-807f-38fbaab75cd9" name="Default Changelist" comment="Design Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/Controllers/MainController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/Controllers/MainController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/about.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/faq.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/faq.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/privacy-policy.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/privacy-policy.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/services.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/services.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/terms-of-service.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/terms-of-service.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/terms-of-use.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/terms-of-use.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,8 +163,16 @@
       <workItem from="1617624469125" duration="4546000" />
       <workItem from="1617630182312" duration="5026000" />
       <workItem from="1617685679320" duration="2182000" />
-      <workItem from="1617687889297" duration="11829000" />
+      <workItem from="1617687889297" duration="12826000" />
     </task>
+    <task id="LOCAL-00001" summary="Design Update">
+      <created>1617706834244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617706834244</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +189,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Design Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Design Update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617703550447">
