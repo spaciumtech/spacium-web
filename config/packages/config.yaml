@@ -13,5 +13,10 @@ knp_paginator:
     filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
 framework:
   session:
+    # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
     handler_id: session.handler.native_file
-    save_path: '%kernel.project_dir%/sessions'
+    save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    cookie_lifetime: 2000000 # change this if you want
+    gc_divisor: 100
+    gc_maxlifetime: 200000 # change this if you want
+    gc_probability: 0
