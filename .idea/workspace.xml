@@ -11,7 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe4ce46-45f3-4919-807f-38fbaab75cd9" name="Default Changelist" comment="Design Update">
-      <change beforePath="$PROJECT_DIR$/config/packages/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,7 @@
       <workItem from="1617624469125" duration="4546000" />
       <workItem from="1617630182312" duration="5026000" />
       <workItem from="1617685679320" duration="2182000" />
-      <workItem from="1617687889297" duration="13318000" />
+      <workItem from="1617687889297" duration="13477000" />
     </task>
     <task id="LOCAL-00001" summary="Design Update">
       <created>1617706834244</created>
