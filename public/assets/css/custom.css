@@ -29,7 +29,13 @@ canvas {
     color: #0b0b0b !important;
 }
 
-#topnav .navigation-menu > li:hover > a, #topnav .navigation-menu > li.active > a{
+#topnav .navigation-menu > li:hover > a{
+    color: #ffffff !important;
+}
+#topnav.nav-sticky .navigation-menu > li:hover > a{
+    color: #0b0b0b !important;
+}
+#topnav .navigation-menu > li.active > a{
     color: #ffffff !important;
 }
 

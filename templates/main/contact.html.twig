@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
-                        <h4 class="title"> Contact us </h4>
+                        <h4 class="title text-white"> Contact us </h4>
                         <div class="page-next">
                             <nav aria-label="breadcrumb" class="d-inline-block">
                                 <ul class="breadcrumb bg-white rounded shadow mb-0">
@@ -45,43 +45,52 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
                     <div class="card custom-form rounded shadow border-0">
-                        <div class="card-body">
-                            <div id="message"></div>
-                            <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
+                        <div id="contact-form" class="card-body">
+                            <h5 class="card-title">You can start search here</h5>
+                            <div v-cloak v-if="success" class="alert alert-success" role="alert">${success}</div>
+                            <div v-cloak v-if="error" class="alert alert-danger" role="alert">${error}</div>
+                            <form class="login-form">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-md-12">
                                         <div class="form-group position-relative">
-                                            <label>Your Name <span class="text-danger">*</span></label>
+                                            <label>Your Name</label>
                                             <i data-feather="user" class="fea icon-sm icons"></i>
-                                            <input name="name" id="name" type="text" class="form-control pl-5"
-                                                   placeholder="First Name :">
-                                        </div>
-                                    </div><!--end col-->
-                                    <div class="col-lg-6">
-                                        <div class="form-group position-relative">
-                                            <label>Your Email <span class="text-danger">*</span></label>
-                                            <i data-feather="mail" class="fea icon-sm icons"></i>
-                                            <input name="email" id="email" type="email" class="form-control pl-5"
-                                                   placeholder="Your email :">
-                                        </div>
-                                    </div><!--end col-->
-                                    <div class="col-lg-12">
-                                        <div class="form-group position-relative">
-                                            <label>Comments</label>
-                                            <i data-feather="message-circle" class="fea icon-sm icons"></i>
-                                            <textarea name="comments" id="comments" rows="4" class="form-control pl-5"
-                                                      placeholder="Your Message :"></textarea>
+                                            <input type="text" v-model="form_data.name" class="form-control pl-5" placeholder="Name"
+                                                   required="">
                                         </div>
                                     </div>
-                                </div><!--end row-->
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <input type="submit" id="submit" name="send"
-                                               class="submitBnt btn btn-primary btn-block" value="Send Message">
-                                        <div id="simple-msg"></div>
-                                    </div><!--end col-->
-                                </div><!--end row-->
-                            </form><!--end form-->
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Email</label>
+                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                            <input type="email" v-model="form_data.email" class="form-control pl-5" placeholder="Email"
+                                                   required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Phone Number</label>
+                                            <i data-feather="phone" class="fea icon-sm icons"></i>
+                                            <input type="number" maxlength="10" minlength="10" v-model="form_data.phone" class="form-control pl-5" placeholder="Phone"
+                                                   required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Message</label>
+                                            <textarea v-model="form_data.message" class="form-control" placeholder="Message"
+                                                      required=""></textarea>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button :disabled="processing" class="btn btn-success w-100 g-recaptcha" data-sitekey="6LdvxIwaAAAAAGcXIYpVemgdGfbrNpK1ditofF8b"
+                                                data-callback='onSubmit'
+                                                data-action='submit'>${ processing ? 'Sending Message...':'Contact Now'}</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div><!--end custom-form-->
                 </div><!--end col-->
@@ -89,7 +98,7 @@
                 <div class="col-lg-7 col-md-6 order-1 order-md-2">
                     <div class="title-heading ml-lg-4">
                         <h4 class="mb-4">Contact Details</h4>
-                        <p class="text-muted">XYZ</p>
+                        <p class="text-muted">Our Head office is located in Mohali, from where we cater to the clients present all over the globe.</p>
                         <div class="media contact-detail align-items-center mt-3">
                             <div class="icon">
                                 <i data-feather="mail" class="fea icon-m-md text-dark mr-3"></i>
@@ -107,17 +116,6 @@
                             <div class="media-body content">
                                 <h4 class="title font-weight-bold mb-0">Phone</h4>
                                 <a href="tel:+152534-468-854" class="text-primary">1800 102 3099</a>
-                            </div>
-                        </div>
-
-                        <div class="media contact-detail align-items-center mt-3">
-                            <div class="icon">
-                                <i data-feather="map-pin" class="fea icon-m-md text-dark mr-3"></i>
-                            </div>
-                            <div class="media-body content">
-                                <h4 class="title font-weight-bold mb-0">Location</h4>
-                                <a href="#map"
-                                   class="video-play-icon text-primary">View on Google map</a>
                             </div>
                         </div>
                     </div>

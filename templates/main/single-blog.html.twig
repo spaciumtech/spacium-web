@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+    <!-- Hero Start -->
+    <section class="bg-half bg-primary d-table w-100">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <div class="page-next-level">
+                        <h4 class="title text-white title-dark"> {{ blog.title.rendered}}</h4>
+                        <div class="page-next">
+                            <nav aria-label="breadcrumb" class="d-inline-block">
+                                <ul class="breadcrumb bg-white rounded shadow mb-0">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/blogs">Blogs</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ blog.title.rendered }}</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div> <!--end container-->
+    </section><!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-white">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-md-2 d-none d-md-block">
+                            <ul class="list-unstyled text-center sticky-bar social-icon mb-0">
+                                <li class="mb-3 h6">Share</li>
+                                <li><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                                <li><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                                <li><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                                <li><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+                            </ul><!--end icon-->
+                        </div>
+
+                        <div class="col-md-10">
+                            <p class="text-muted">{{ blog.excerpt.rendered | raw }}</p>
+
+                            <ul class="list-unstyled d-flex justify-content-between mt-4">
+                                <li class="list-inline-item user mr-2"><a href="javascript:void(0)" class="text-muted"><i class="mdi mdi-account text-dark"></i> Spacium</a></li>
+                                <li class="list-inline-item date text-muted"><i class="mdi mdi-calendar-check text-dark"></i>
+                                    {{ blog.date }}</li>
+                            </ul>
+
+                            <img src="{{blog._embedded['wp:featuredmedia'][0].source_url}}" class="img-fluid rounded-md shadow" alt="">
+
+                            <h5 class="mt-4">{{ blog.title.rendered }}</h5>
+
+                            <p class="text-muted">
+                                {{ blog.content.rendered | raw }}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block footer_javascript %}
+{% endblock %}

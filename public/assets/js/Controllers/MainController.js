@@ -62,8 +62,16 @@ var ContactController = new Vue({
                 return false;
             }
             self.processing = true;
-            axios.post('php/contact.php',this.form_data)
-                .then((res) => {
+
+            let formdata = new FormData();
+            formdata.append('name',this.form_data.name);
+            formdata.append('email',this.form_data.email);
+            formdata.append('message',this.form_data.message);
+            formdata.append('token',this.form_data.token);
+            formdata.append('phone',this.form_data.phone);
+            axios.post('/api/send',formdata)
+                .then((response) => {
+                    const res = response.data;
                     self.processing = false;
                     if(res.response){
                         self.success = res.message;

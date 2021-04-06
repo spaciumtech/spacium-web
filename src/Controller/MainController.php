@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Controller;
-
+use App\Service\Common;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class MainController extends AbstractController
 {
+
+
     /**
      * @Route("/", name="home")
      */
@@ -86,6 +91,66 @@ class MainController extends AbstractController
               'title' => 'terms-of-service - Spacium Technologies',
           ]);
      }
+
+     /**
+     * @Route("/blogs", name="blogs")
+     */
+     public function BlogsPage(Request $request,Common $common,PaginatorInterface $paginator): Response
+     {
+         $page = $request->query->getInt('page', 1);
+          $blogs = $common->fetchData('https://spacium.co/wp-json/wp/v2/posts',[
+              'per_page' => 6,
+              'page' => $page,
+              'orderby' => 'date',
+              'order' => 'desc',
+              '_embed' => true,
+          ],'GET');
+          $total_items = array_fill(0, (int) $blogs['total'][0], 'mycontent');
+         $pagination = $paginator->paginate(
+             $total_items, /* query NOT result */
+             $page, /*page number*/
+             6 /*limit per page*/
+         );
+
+          return $this->render('main/blogs.html.twig', [
+              'title' => 'Blogs & News - Spacium Technologies',
+              'blogs' => $blogs['content'],
+              'total' => $blogs['total'],
+              'current_page' => $page,
+              'pagination' => $pagination
+          ]);
+     }
+
+     /**
+     * @Route("/blog/{id}/{slug}", name="single-blog")
+     */
+     public function SingleBlogPage($id,$slug,Request $request,Common $common,PaginatorInterface $paginator): Response
+     {
+          $blogs = $common->fetchData('https://spacium.co/wp-json/wp/v2/posts/'.$id,[
+              '_embed' => true,
+          ],'GET');
+         $blog_data = $blogs['content'];
+          return $this->render('main/single-blog.html.twig', [
+              'title' => $blog_data['title']['rendered'].' - Spacium Technologies',
+              'blog' => $blog_data,
+          ]);
+     }
+
+     /**
+     * @Route("/api/send", name="contact-send")
+     */
+     public function SendEmailApi(Request $request,Common $common,PaginatorInterface $paginator): Response
+     {
+         $name = $request->get('name');
+         $email = $request->get('email');
+         $phone = $request->get('phone');
+         $message = $request->get('message');
+         $token = $request->get('token');
+       //  print_r($name);die();
+         $response = $common->sendEmail($name,$phone,$email,$message,$token);
+         return new JsonResponse($response);
+     }
+
 
 
 }
