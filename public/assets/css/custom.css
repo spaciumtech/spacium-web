@@ -70,3 +70,22 @@ ul.text-muted li::before {
     justify-content: flex-end;
     margin-right: 0 !important;
 }
+
+
+@media (max-width:992px){
+    .logo .dark{
+        display: inline-block !important;
+    }
+
+     .logo .light{
+        display: none !important;
+    }
+
+    #topnav .navigation-menu > li > a {
+        color: #636363;
+    }
+
+    #topnav .navigation-menu > li.active > a {
+        color: #636363 !important;
+    }
+}
