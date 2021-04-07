@@ -11,9 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe4ce46-45f3-4919-807f-38fbaab75cd9" name="Default Changelist" comment="Design Update">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/services.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/services.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +163,7 @@
       <workItem from="1617624469125" duration="4546000" />
       <workItem from="1617630182312" duration="5026000" />
       <workItem from="1617685679320" duration="2182000" />
-      <workItem from="1617687889297" duration="19240000" />
+      <workItem from="1617687889297" duration="19902000" />
     </task>
     <task id="LOCAL-00001" summary="Design Update">
       <created>1617706834244</created>
