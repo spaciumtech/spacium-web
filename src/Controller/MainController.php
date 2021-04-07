@@ -130,6 +130,7 @@ class MainController extends AbstractController
               '_embed' => true,
           ],'GET');
          $blog_data = $blogs['content'];
+         //echo '<pre/>';print_r($blog_data);die();
           return $this->render('main/single-blog.html.twig', [
               'title' => $blog_data['title']['rendered'].' - Spacium Technologies',
               'blog' => $blog_data,

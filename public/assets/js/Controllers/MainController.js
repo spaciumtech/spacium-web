@@ -1,4 +1,4 @@
-var master_api = 'https://spacium.co/wp-json/wp/v2/';
+var master_api = 'https://blogs.spacium.co/wp-json/wp/v2/';
 function onSubmit(token){
     if(!token) return false;
 

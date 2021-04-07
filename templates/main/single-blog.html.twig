@@ -2,6 +2,17 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block social_tags %}
+    <meta property="og:title" content="{{ blog.title.rendered | raw }}">
+    <meta property="og:description" content="{{ blog.excerpt.rendered | striptags  }}">
+    <meta property="og:image" content="{{blog._embedded['wp:featuredmedia'][0].source_url}}">
+    <meta property="og:url" content="https://spacium.co{{ path('single-blog', {'id': blog.id,'slug':blog.slug}) }}">
+    <meta name="twitter:title" content="{{ blog.title.rendered | raw }}">
+    <meta name="twitter:description" content="{{ blog.excerpt.rendered | striptags }}">
+    <meta name="twitter:image" content="https://spacium.co{{ path('single-blog', {'id': blog.id,'slug':blog.slug}) }}">
+    <meta name="twitter:card" content="{{ blog.excerpt.rendered | striptags }}">
+{% endblock %}
+
 {% block body %}
 
     <!-- Hero Start -->
@@ -11,13 +22,13 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
-                        <h4 class="title text-white title-dark"> {{ blog.title.rendered}}</h4>
+                        <h4 class="title text-white title-dark"> {{ blog.title.rendered | raw}}</h4>
                         <div class="page-next">
                             <nav aria-label="breadcrumb" class="d-inline-block">
                                 <ul class="breadcrumb bg-white rounded shadow mb-0">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item"><a href="/blogs">Blogs</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{ blog.title.rendered }}</li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ blog.title.rendered  | raw }}</li>
                                 </ul>
                             </nav>
                         </div>
@@ -44,15 +55,14 @@
                         <div class="col-md-2 d-none d-md-block">
                             <ul class="list-unstyled text-center sticky-bar social-icon mb-0">
                                 <li class="mb-3 h6">Share</li>
-                                <li><a href="https://www.facebook.com/spaciumtechnologiesofficial/" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                <li><a href="https://www.instagram.com/spaciumtechnologies/" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                                <li><a href="https://twitter.com/SpaciumI" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/spacium-technologies-13a7721b6/?originalSubdomain=in" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://spacium.co{{ path('single-blog', {'id': blog.id,'slug':blog.slug}) }}" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                                <li><a href="https://twitter.com/intent/tweet?url=https://spacium.co{{ path('single-blog', {'id': blog.id,'slug':blog.slug}) }}&text={{ blog.title.rendered }}" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                                <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://spacium.co{{ path('single-blog', {'id': blog.id,'slug':blog.slug}) }}" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
                             </ul><!--end icon-->
                         </div>
 
                         <div class="col-md-10">
-                            <p class="text-muted">{{ blog.excerpt.rendered | raw }}</p>
+                                <p class="text-muted">{{ blog.excerpt.rendered | raw }}</p>
 
                             <ul class="list-unstyled d-flex justify-content-between mt-4">
                                 <li class="list-inline-item user mr-2"><a href="javascript:void(0)" class="text-muted"><i class="mdi mdi-account text-dark"></i> Spacium</a></li>
@@ -62,7 +72,7 @@
 
                             <img src="{{blog._embedded['wp:featuredmedia'][0].source_url}}" class="img-fluid rounded-md shadow" alt="">
 
-                            <h5 class="mt-4">{{ blog.title.rendered }}</h5>
+                            <h5 class="mt-4">{{ blog.title.rendered | raw }}</h5>
 
                             <p class="text-muted">
                                 {{ blog.content.rendered | raw }}
