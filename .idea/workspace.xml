@@ -12,15 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2fe4ce46-45f3-4919-807f-38fbaab75cd9" name="Default Changelist" comment="Design Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/chat-app.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/chat-app.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/cloud-app.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/cloud-app.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/partner-app.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/partner-app.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/store-app.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/store-app.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/about.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/services.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/services.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/single-blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/single-blog.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +164,7 @@
       <workItem from="1617624469125" duration="4546000" />
       <workItem from="1617630182312" duration="5026000" />
       <workItem from="1617685679320" duration="2182000" />
-      <workItem from="1617687889297" duration="17907000" />
+      <workItem from="1617687889297" duration="19240000" />
     </task>
     <task id="LOCAL-00001" summary="Design Update">
       <created>1617706834244</created>
@@ -180,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617706834244</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Design Update">
+      <created>1617718161949</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617718161949</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

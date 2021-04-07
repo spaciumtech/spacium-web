@@ -98,7 +98,7 @@ class MainController extends AbstractController
      public function BlogsPage(Request $request,Common $common,PaginatorInterface $paginator): Response
      {
          $page = $request->query->getInt('page', 1);
-          $blogs = $common->fetchData('https://spacium.co/wp-json/wp/v2/posts',[
+          $blogs = $common->fetchData('https://blogs.spacium.co/wp-json/wp/v2/posts',[
               'per_page' => 6,
               'page' => $page,
               'orderby' => 'date',
@@ -126,7 +126,7 @@ class MainController extends AbstractController
      */
      public function SingleBlogPage($id,$slug,Request $request,Common $common,PaginatorInterface $paginator): Response
      {
-          $blogs = $common->fetchData('https://spacium.co/wp-json/wp/v2/posts/'.$id,[
+          $blogs = $common->fetchData('https://blogs.spacium.co/wp-json/wp/v2/posts/'.$id,[
               '_embed' => true,
           ],'GET');
          $blog_data = $blogs['content'];
